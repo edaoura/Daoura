@@ -32,12 +32,13 @@ public class BaseTest {
     @AfterSuite
     public void afterSuite() {
         if(null != driver) {
-       //     driver.close();
-     //       driver.quit();
+           driver.close();
+           driver.quit();
         }
     }
 
     public WebDriver getDriver() {
         return driver;
     }
+
 }

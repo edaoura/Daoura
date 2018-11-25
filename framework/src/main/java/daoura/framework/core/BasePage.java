@@ -7,6 +7,9 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * @author Emil Daoura
+ */
 public class BasePage {
 
     private static final int TIMEOUT = 5; //seconds
@@ -31,5 +34,30 @@ public class BasePage {
 
     protected void waitForTextToDisappear(By locator, String text) {
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
+    }
+
+    protected void waitForElementClickable(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    protected void closeAllBrowserTabsButNotTheFirst(){
+        String originalHandle = driver.getWindowHandle();
+
+        for(String handle : driver.getWindowHandles()) {
+            if (!handle.equals(originalHandle)) {
+                driver.switchTo().window(handle);
+                driver.close();
+            }
+        }
+        driver.switchTo().window(originalHandle);
+    }
+
+    protected void focusNewTab(){
+        String currentTab = driver.getWindowHandle();
+        for (String tab : driver.getWindowHandles()) {
+            if (!tab.equals(currentTab)){
+                driver.switchTo().window(tab);
+            }
+        }
     }
 }
