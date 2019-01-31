@@ -7,5 +7,3 @@ For the implemantation of the test automation i used:
 5- WebDriver as the browser automation tool   (you can install it in windows over the cmd: C:\> choco install chromedriver)
 choco o Chocolatey is a package manager for Windows,
 
-All scenarios are in the module regressionTests.
-
