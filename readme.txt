@@ -9,9 +9,3 @@ choco o Chocolatey is a package manager for Windows,
 
 All scenarios are in the module regressionTests.
 
-For the point 5. i created 2 of 4 tests that compare the test result with the expected result:
-i choose the number 1 and 2. the "search for location"  function and "contact" are important for the magazine,
-because searching for a location where people can have vacations is the main object of trivago.
-The contact function is the channel between the company and the clients. It is important to hear opinions of the client
-for the improvements of the magazine.
-
